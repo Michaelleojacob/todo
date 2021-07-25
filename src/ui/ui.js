@@ -1,21 +1,22 @@
 import './ui.css';
+import header from './header/header';
+import sidebar from './sidebar/sidebar';
+import flair from './../flair/flair';
 
 export default function ui() {
-	(function () {
-		const ui = {
-			init: function () {
-				this.cacheDom();
-			},
-			cacheDom: function () {
-				this.container = document.querySelector('#container');
-				this.makeUiWrapper();
-			},
-			makeUiWrapper: function () {
-				this.uiwrapper = document.createElement('div');
-				this.uiwrapper.classList.add('uiwrapper');
-				this.container.append(this.uiwrapper);
-			},
-		};
-		ui.init();
-	})();
+	const ui = {
+		init: function () {
+			this.cacheDom();
+			this.runUiElements();
+		},
+		cacheDom: function () {
+			this.container = document.querySelector('#container');
+		},
+		runUiElements: function () {
+			header(this.container);
+			sidebar(this.container);
+			flair();
+		},
+	};
+	ui.init();
 }

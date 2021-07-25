@@ -1,0 +1,6 @@
+.sbwrapper {
+	display: flex;
+	background: gray;
+	height: 70vh;
+	width: 100px;
+}
