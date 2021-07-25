@@ -1,6 +1,6 @@
 import './ui.css';
 import header from './header/header';
-import sidebar from './sidebar/sidebar';
+import content from './../content/content';
 import flair from './../flair/flair';
 
 export default function ui() {
@@ -14,7 +14,7 @@ export default function ui() {
 		},
 		runUiElements: function () {
 			header(this.container);
-			sidebar(this.container);
+			content(this.container);
 			flair();
 		},
 	};

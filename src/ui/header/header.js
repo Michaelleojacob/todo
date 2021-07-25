@@ -1,4 +1,5 @@
 import './header.css';
+import burger from './../../burger/burger';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -43,6 +44,7 @@ export default function myheader(parent) {
 			this.bicon.classList.add('bicon');
 			this.bicon.innerHTML = `<i class="fas fa-bars"></i>`;
 			this.hwrapper.appendChild(this.bicon);
+			burger(this.bicon);
 		},
 	};
 	return header.init();
