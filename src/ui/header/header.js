@@ -44,7 +44,7 @@ export default function myheader(parent) {
 			this.bicon.classList.add('bicon');
 			this.bicon.innerHTML = `<i class="fas fa-bars"></i>`;
 			this.hwrapper.appendChild(this.bicon);
-			burger(this.bicon);
+			burger(this.bicon, parent);
 		},
 	};
 	return header.init();
