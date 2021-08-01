@@ -1,0 +1,38 @@
+.linkwrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	font-size: 2rem;
+	color: #e9e3e6;
+}
+
+.buttonHolder {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	margin-top: 2%;
+}
+
+.iconButtonHolder {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	border-bottom: 0.2rem solid black;
+}
+
+.navbtn {
+	font-size: inherit;
+	color: inherit;
+	margin: 2% 0px 2% 0px;
+}
+
+.projecttext {
+	font-size: 2.5rem;
+}
+.addprojectbtn {
+	color: green;
+	font-size: 4rem;
+}
