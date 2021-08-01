@@ -1,3 +1,18 @@
-#navmenuarea {
+.inactive {
 	display: none;
+}
+
+.active {
+	display: flex;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: stretch;
+}
+
+.dumbplace {
+	display: flex;
+	height: 100px;
+	background: purple;
+	border: 1px solid red;
 }

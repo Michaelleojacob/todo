@@ -8,14 +8,16 @@ export default function myNavEvent() {
 			this.elementListening = document.querySelector('.bicon');
 			this.elementToChange = document.querySelector('#navmenuarea');
 		},
+
 		targetWasNavBurger: function (event) {
+			console.log(navEvent.elementToChange.className);
 			if (
-				navEvent.elementToChange.style.display === '' ||
-				navEvent.elementToChange.style.display === 'none'
+				navEvent.elementToChange.className === 'inactive' ||
+				navEvent.elementToChange.className === ''
 			) {
-				navEvent.elementToChange.style.display = 'flex';
+				return (navEvent.elementToChange.className = 'active');
 			} else {
-				navEvent.elementToChange.style.display = 'none';
+				return (navEvent.elementToChange.className = 'inactive');
 			}
 		},
 		addListenerToNav: function () {
