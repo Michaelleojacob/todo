@@ -1,0 +1,9 @@
+.contentwrap {
+	display: flex;
+	height: 200px;
+	border: 1px solid white;
+	/* delete later */
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
