@@ -7,7 +7,6 @@ button {
 
 .hwrapper {
 	display: flex;
-	height: 8vh;
 	width: 100%;
 	justify-content: space-between;
 	margin-top: 2%;
@@ -28,4 +27,8 @@ button {
 	font-size: 3rem;
 	color: white;
 	margin-right: 3%;
+}
+
+.fa-bars {
+	pointer-events: none;
 }

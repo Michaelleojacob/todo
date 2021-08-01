@@ -1,9 +1,10 @@
 import './ui.css';
 import header from './header/header';
+import mydropdown from '../dropdownmenuarea/dropdown';
 import content from './../content/content';
-import flair from './../flair/flair';
+import myfooter from './../flair/flair';
 
-export default function ui() {
+export default function myui() {
 	const ui = {
 		init: function () {
 			this.cacheDom();
@@ -13,9 +14,10 @@ export default function ui() {
 			this.container = document.querySelector('#container');
 		},
 		runUiElements: function () {
-			header(this.container);
-			content(this.container);
-			flair();
+			header(ui.container);
+			mydropdown(ui.container);
+			content(ui.container);
+			myfooter(ui.container);
 		},
 	};
 	ui.init();

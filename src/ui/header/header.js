@@ -1,5 +1,4 @@
 import './header.css';
-import burger from './../../burger/burger';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -36,15 +35,14 @@ export default function myheader(parent) {
 		addTitle: function () {
 			this.hTitle = document.createElement('div');
 			this.hTitle.classList.add('hTitle');
-			this.hTitle.textContent = 'todo list';
+			this.hTitle.textContent = 'Todo';
 			this.tiwrap.appendChild(this.hTitle);
 		},
 		burgerIcon: function () {
-			this.bicon = document.createElement('button');
-			this.bicon.classList.add('bicon');
+			this.bicon = document.createElement('div');
+			this.bicon.classList.add('bicon', 'inactive');
 			this.bicon.innerHTML = `<i class="fas fa-bars"></i>`;
 			this.hwrapper.appendChild(this.bicon);
-			burger(this.bicon, parent);
 		},
 	};
 	return header.init();

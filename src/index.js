@@ -1,5 +1,4 @@
 import './style.css';
-import ui from './ui/ui';
-import flair from './flair/flair';
+import myui from './ui/ui';
 
-ui();
+myui();
