@@ -10,7 +10,7 @@ export default function MyNavMenuDisplay(parent) {
 		makeStaticNavMenuArea: function () {
 			this.navmenuarea = document.createElement('div');
 			this.navmenuarea.setAttribute('id', 'navmenuarea');
-			this.navmenuarea.classList.add('active');
+			this.navmenuarea.classList.add('inactive');
 			parent.appendChild(this.navmenuarea);
 		},
 		renderLinks: function () {

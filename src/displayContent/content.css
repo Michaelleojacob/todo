@@ -1,9 +1,6 @@
 .contentwrap {
 	display: flex;
-	height: 200px;
-	border: 1px solid white;
-	/* delete later */
-	align-content: center;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	flex-wrap: nowrap;
 }
