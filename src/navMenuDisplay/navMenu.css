@@ -4,8 +4,8 @@
 
 .active {
 	display: flex;
-	display: flex;
+	padding: 0px 10% 0px 10%;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	align-items: stretch;
+	align-items: center;
 }

@@ -8,6 +8,7 @@ export default class MakeLinks {
 	static init(parent) {
 		this.parent = parent;
 		this.createLinkWrap();
+		this.makeProjectsDiv();
 		this.renderButtons();
 	}
 	static createLinkWrap() {
@@ -29,29 +30,42 @@ export default class MakeLinks {
 	}
 	static makeButtons(elementName, textcontent, iconInfo) {
 		this.elementName = document.createElement('button');
-		this.elementName.classList.add('navbtn', elementName);
+		this.elementName.classList.add('navbtn', elementName, 'nav');
 		this.elementName.innerHTML = `${iconInfo} ${textcontent}`;
 		this.iconButtonHolder.append(this.elementName);
 	}
+	static makeProjectsDiv() {
+		this.projDiv = document.createElement('div');
+		this.projDiv.classList.add('projDiv');
+		this.parent.appendChild(this.projDiv);
+	}
 	static nonBtnProjectTxt() {
 		this.projecttext = document.createElement('div');
-		this.projecttext.classList.add('projecttext');
+		this.projecttext.classList.add('projecttext', 'nav');
 		this.projecttext.textContent = 'Projects';
-		this.buttonHolder.appendChild(this.projecttext);
+		this.projDiv.appendChild(this.projecttext);
 	}
 	static makeAddProjectBtn() {
 		this.addprojectbtn = document.createElement('button');
-		this.addprojectbtn.classList.add('addprojectbtn');
+		this.addprojectbtn.classList.add('addprojectbtn', 'nav');
 		this.addprojectbtn.textContent = '+';
-		this.buttonHolder.appendChild(this.addprojectbtn);
+		this.projDiv.appendChild(this.addprojectbtn);
 	}
 
 	//! make plus button separate as to add text = 'add project'
 	//!append dynamic user made projects to projects / prepend to add project + btn
 	static renderButtons() {
-		this.makeButtons('allBtn', 'All', `<i class="fas fa-list"></i>`);
-		this.makeButtons('todaybtn', 'Today', `<i class="fas fa-inbox"></i>`);
-		this.makeButtons('weekbtn', 'Week', `<i class="fas fa-calendar-week"></i>`);
+		this.makeButtons('allBtn', 'All', `<i class="fas linkicon fa-list"></i>`);
+		this.makeButtons(
+			'todaybtn',
+			'Today',
+			`<i class="fas linkicon fa-inbox"></i>`
+		);
+		this.makeButtons(
+			'weekbtn',
+			'Week',
+			`<i class="fas linkicon fa-calendar-week"></i>`
+		);
 		this.nonBtnProjectTxt();
 		this.makeAddProjectBtn();
 	}
