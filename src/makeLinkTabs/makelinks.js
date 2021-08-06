@@ -55,16 +55,20 @@ export default class MakeLinks {
 	//! make plus button separate as to add text = 'add project'
 	//!append dynamic user made projects to projects / prepend to add project + btn
 	static renderButtons() {
-		this.makeButtons('allBtn', 'All', `<i class="fas linkicon fa-list"></i>`);
+		this.makeButtons(
+			'allBtn',
+			'All',
+			`<i class="fas svg linkicon fa-list"></i>`
+		);
 		this.makeButtons(
 			'todaybtn',
 			'Today',
-			`<i class="fas linkicon fa-inbox"></i>`
+			`<i class="fas svg linkicon fa-inbox"></i>`
 		);
 		this.makeButtons(
 			'weekbtn',
 			'Week',
-			`<i class="fas linkicon fa-calendar-week"></i>`
+			`<i class="fas svg linkicon fa-calendar-week"></i>`
 		);
 		this.nonBtnProjectTxt();
 		this.makeAddProjectBtn();

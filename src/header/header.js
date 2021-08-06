@@ -29,7 +29,7 @@ export default function myheader(parent) {
 		addIcon: function () {
 			this.icon = document.createElement('div');
 			this.icon.classList.add('hicon');
-			this.icon.innerHTML = `<i class="fas fa-check-square"></i>`;
+			this.icon.innerHTML = `<i class="fas svg fa-check-square"></i>`;
 			this.tiwrap.appendChild(this.icon);
 		},
 		addTitle: function () {
@@ -41,7 +41,7 @@ export default function myheader(parent) {
 		burgerIcon: function () {
 			this.bicon = document.createElement('div');
 			this.bicon.classList.add('bicon');
-			this.bicon.innerHTML = `<i class="fas fa-bars"></i>`;
+			this.bicon.innerHTML = `<i class="fas svg fa-bars"></i>`;
 			this.hwrapper.appendChild(this.bicon);
 		},
 	};

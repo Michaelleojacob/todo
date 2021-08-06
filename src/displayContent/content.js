@@ -1,21 +1,27 @@
 import './content.css';
-import AllTasks from './../allTasks/all';
+import MakeDiv from '../makeDiv/makeDiv';
 
 export default function myContent(parent) {
 	'use strict';
 	const content = {
-		init: function (parent) {
-			this.makeContentWrapper();
-			this.renderAllTasks();
+		init: function () {
+			this.renderContentWrapper();
+			// this.renderTitle();
 		},
-		makeContentWrapper: function () {
-			this.contentwrap = document.createElement('div');
-			this.contentwrap.classList.add('contentwrap');
-			parent.appendChild(this.contentwrap);
+		renderContentWrapper: function () {
+			this.contentwrap = MakeDiv({
+				elementName: 'contentwrap',
+				text: null,
+				parentEl: parent,
+			});
 		},
-		renderAllTasks: function () {
-			AllTasks.init(content.contentwrap);
-		},
+		// renderTitle: function () {
+		// 	this.title = MakeDiv({
+		// 		elementName: 'title',
+		// 		text: 'Title',
+		// 		parentEl: this.contentwrap,
+		// 	});
+		// },
 	};
 	content.init();
 }

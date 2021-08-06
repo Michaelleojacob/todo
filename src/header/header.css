@@ -9,7 +9,7 @@ button {
 	display: flex;
 	justify-content: space-between;
 	background: #292929;
-	padding: 5%;
+	padding: 20px;
 }
 .tiwrap {
 	display: flex;

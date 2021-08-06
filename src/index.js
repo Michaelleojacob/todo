@@ -3,6 +3,7 @@ import myNavEvent from './navEvent/navEvent';
 import myheader from './header/header';
 import MyNavMenuDisplay from './navMenuDisplay/navMenu';
 import myContent from './displayContent/content';
+import myspaghetti from './spaghetti/spaghetti';
 
 (function () {
 	const app = {
@@ -12,6 +13,7 @@ import myContent from './displayContent/content';
 			this.renderHeader();
 			this.renderNavArea();
 			this.renderContent();
+			this.renderSpaghetti();
 		},
 		cacheDom: function () {
 			this.parent = document.querySelector('#container');
@@ -27,8 +29,11 @@ import myContent from './displayContent/content';
 		renderNavArea: function () {
 			MyNavMenuDisplay(app.parent);
 		},
-		renderContent() {
+		renderContent: function () {
 			myContent(app.parent);
+		},
+		renderSpaghetti: function () {
+			myspaghetti(app.parent);
 		},
 	};
 	app.init();

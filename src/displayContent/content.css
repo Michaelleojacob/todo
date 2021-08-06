@@ -4,3 +4,9 @@
 	align-items: flex-start;
 	flex-wrap: nowrap;
 }
+
+.title {
+	font-size: 2rem;
+	display: flex;
+	margin-left: 50px;
+}
