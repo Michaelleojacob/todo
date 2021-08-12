@@ -12,7 +12,7 @@ import myspaghetti from './spaghetti/spaghetti';
 			this.navEventListener();
 			this.renderHeader();
 			this.renderNavArea();
-			this.renderContent();
+			// this.renderContent();
 			this.renderSpaghetti();
 		},
 		cacheDom: function () {
@@ -29,9 +29,9 @@ import myspaghetti from './spaghetti/spaghetti';
 		renderNavArea: function () {
 			MyNavMenuDisplay(app.parent);
 		},
-		renderContent: function () {
-			myContent(app.parent);
-		},
+		// renderContent: function () {
+		// 	myContent(app.parent);
+		// },
 		renderSpaghetti: function () {
 			myspaghetti(app.parent);
 		},

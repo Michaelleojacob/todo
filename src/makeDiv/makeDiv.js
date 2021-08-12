@@ -6,7 +6,7 @@ export default function MakeDiv({
 }) {
 	let name = elementName;
 	elementName = document.createElement(type);
-	elementName.classList.add(name);
+	elementName.classList.add(`${name}`);
 	elementName.textContent = text;
 	parentEl.appendChild(elementName);
 	return elementName;
