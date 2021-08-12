@@ -36,15 +36,24 @@ export default function myspaghetti(parent) {
 			});
 			this.allDiv.classList.add('contenttitle');
 			const todos = Storage.getTodos();
-			for (let item of todos) {
+			this.makeTodoItems(todos);
+		},
+		handleClickLogic(event) {
+			console.log(event);
+		},
+		eventDeligation() {
+			document.addEventListener('click', this.handleClickLogic);
+		},
+		makeTodoItems(arr) {
+			for (let item of arr) {
 				this.itemWrapper = document.createElement('div');
 				this.itemWrapper.classList.add('itemWrapper');
 				this.itemParent = document.createElement('div');
 				this.itemParent.classList.add('itemParent');
-				this.itemName = document.createElement('div');
 				this.itemBtn = document.createElement('button');
 				this.itemBtn.classList.add('itemBtn');
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
+				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
 				this.itemName.innerHTML = ` ${item.name} (${item.from})`;
 				this.itemDate = document.createElement('div');
@@ -55,12 +64,6 @@ export default function myspaghetti(parent) {
 				this.itemParent.appendChild(this.itemDate);
 				this.itemWrapper.prepend(this.itemBtn);
 			}
-		},
-		handleClickLogic(event) {
-			console.log(event);
-		},
-		eventDeligation() {
-			document.addEventListener('click', this.handleClickLogic);
 		},
 	};
 	spaghetti.init();
