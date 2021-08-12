@@ -1,6 +1,11 @@
-export default function MakeDiv({ elementName, text, parentEl }) {
+export default function MakeDiv({
+	elementName,
+	type = 'div',
+	text = null,
+	parentEl,
+}) {
 	let name = elementName;
-	elementName = document.createElement('div');
+	elementName = document.createElement(type);
 	elementName.classList.add(name);
 	elementName.textContent = text;
 	parentEl.appendChild(elementName);

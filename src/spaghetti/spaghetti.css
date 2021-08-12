@@ -2,3 +2,8 @@
 	font-size: 2rem;
 	margin-left: 50px;
 }
+
+.addNewTodo {
+	color: green;
+	font-size: 4rem;
+}

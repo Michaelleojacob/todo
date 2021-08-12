@@ -11,14 +11,7 @@ export default function myNavEvent() {
 
 		targetWasNavBurger: function (event) {
 			console.log(navEvent.elementToChange.className);
-			if (
-				navEvent.elementToChange.className === 'inactive' ||
-				navEvent.elementToChange.className === ''
-			) {
-				return (navEvent.elementToChange.className = 'active');
-			} else {
-				return (navEvent.elementToChange.className = 'inactive');
-			}
+			navEvent.elementToChange.classList.toggle('active');
 		},
 		addListenerToNav: function () {
 			this.elementListening.addEventListener('click', this.targetWasNavBurger);
