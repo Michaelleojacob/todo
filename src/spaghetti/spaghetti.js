@@ -6,7 +6,6 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-//! give all/today/week and unique projects an identifier for clickDel !\\
 export default function myspaghetti(parent) {
 	const spaghetti = {
 		init() {
@@ -14,11 +13,12 @@ export default function myspaghetti(parent) {
 			console.log(Storage.getTodos());
 			this.makeSphaghWrapper();
 			this.eventDeligation();
-			this.staticAll();
+			this.simulateClick();
+			// this.staticAll();
 		},
 		removeAllChildNodes(parent) {
 			while (parent.firstChild) {
-				parent.removeAllChild(parent.firstChild);
+				parent.removeChild(parent.firstChild);
 			}
 		},
 		makeSphaghWrapper() {
@@ -28,21 +28,64 @@ export default function myspaghetti(parent) {
 			});
 			return this.contentWrapper;
 		},
-		staticAll() {
-			this.allDiv = MakeDiv({
-				elementName: 'allTitle',
-				text: 'All',
-				parentEl: this.contentWrapper,
-			});
-			this.allDiv.classList.add('contenttitle');
-			const todos = Storage.getTodos();
-			this.makeTodoItems(todos);
-		},
+		//! this could all be made more dynamic !\\
+		// staticAll() {
+		// 	this.removeAllChildNodes(this.contentWrapper);
+		// 	this.allDiv = MakeDiv({
+		// 		elementName: 'allTitle',
+		// 		text: 'All',
+		// 		parentEl: this.contentWrapper,
+		// 	});
+		// 	this.allDiv.classList.add('contenttitle');
+		// 	const todos = Storage.getTodos();
+		// 	this.makeTodoItems(todos);
+		// },
+		// makeAll(){
+		// 	this.makeCompletedUI()
+		// },
 		handleClickLogic(event) {
 			console.log(event);
+			if (event.target.className.includes('allBtn')) {
+				const text = event.target.textContent.trim();
+				spaghetti.makeCompletedUI({
+					divName: text,
+					textcontent: text,
+					objProperty: 'from',
+					filterBy: 'all',
+				});
+			}
+			if (event.target.className.includes('todaybtn')) {
+				console.log('today');
+				// this.renderToday();
+			}
+
+			if (event.target.className.includes('weekbtn')) {
+				console.log('week');
+				// this.renderWeek();
+			}
 		},
 		eventDeligation() {
 			document.addEventListener('click', this.handleClickLogic);
+		},
+		makeContentTitle(divName, textcontent) {
+			spaghetti.removeAllChildNodes(spaghetti.contentWrapper);
+			this.dynamicDiv = MakeDiv({
+				elementName: divName,
+				text: textcontent,
+				parentEl: this.contentWrapper,
+			});
+			this.dynamicDiv.classList.add('contenttitle');
+			return this.dynamicDiv;
+		},
+		getFilteredArray(objProperty, filterBy) {
+			this.allArr = Storage.getTodos();
+			this.filteredArr = [];
+			this.allArr.filter(x => {
+				if (x[objProperty] === filterBy) {
+					this.filteredArr.push(x);
+				}
+			});
+			return this.filteredArr;
 		},
 		makeTodoItems(arr) {
 			for (let item of arr) {
@@ -55,7 +98,7 @@ export default function myspaghetti(parent) {
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
 				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
-				this.itemName.innerHTML = ` ${item.name} (${item.from})`;
+				this.itemName.innerHTML = ` ${item.name}(${item.from})`;
 				this.itemDate = document.createElement('div');
 				this.itemDate.textContent = `${item.date}`;
 				this.contentWrapper.appendChild(this.itemWrapper);
@@ -65,43 +108,16 @@ export default function myspaghetti(parent) {
 				this.itemWrapper.prepend(this.itemBtn);
 			}
 		},
+		simulateClick() {
+			document.addEventListener('DOMContentLoaded', e => {
+				document.querySelector('.allBtn').click();
+			});
+		},
+		makeCompletedUI({ divName, textcontent, objProperty, filterBy }) {
+			this.makeContentTitle(divName, textcontent);
+			const myfilteredarr = this.getFilteredArray(objProperty, filterBy);
+			this.makeTodoItems(myfilteredarr);
+		},
 	};
 	spaghetti.init();
 }
-
-// function removeAllChildNodes(parent) {
-// 	while (parent.firstChild) {
-// 		parent.removeChild(parent.firstChild);
-// 	}
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-// 	let parent = document.querySelector('.contentwrap');
-// 	let titlewrap = MakeDiv({
-// 		elementName: 'titlewrap',
-// 		parentEl: parent,
-// 	});
-// 	document.addEventListener('click', e => {
-// 		console.log(e.target.innerText);
-// 		function makeDivFromClick(targetName) {
-// 			removeAllChildNodes(titlewrap);
-// 			return MakeDiv({
-// 				elementName: targetName,
-// 				text: targetName,
-// 				parentEl: titlewrap,
-// 			});
-// 		}
-// 		if (e.target.className.includes('navbtn')) {
-// 			if (e.target.innerText.toLowerCase() === 'all') {
-// 				const grabAllDiv = makeDivFromClick(e.target.innerText);
-// 				//! need unique div for unique functionality. !\\
-// 			}
-// 			if (e.target.innerText.toLowerCase() === 'today') {
-// 				makeDivFromClick(e.target.innerText);
-// 			}
-// 			if (e.target.innerText.toLowerCase() === 'week') {
-// 				makeDivFromClick(e.target.innerText);
-// 			}
-// 		}
-// 	});
-// });
