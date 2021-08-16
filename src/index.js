@@ -2,8 +2,7 @@ import './index.css';
 import myNavEvent from './navEvent/navEvent';
 import myheader from './header/header';
 import MyNavMenuDisplay from './navMenuDisplay/navMenu';
-import myContent from './displayContent/content';
-import myspaghetti from './spaghetti/spaghetti';
+import myuichanges from './handleuichanges/uichanges';
 
 (function () {
 	const app = {
@@ -13,7 +12,7 @@ import myspaghetti from './spaghetti/spaghetti';
 			this.renderHeader();
 			this.renderNavArea();
 			// this.renderContent();
-			this.renderSpaghetti();
+			this.renderuichanges();
 		},
 		cacheDom: function () {
 			this.parent = document.querySelector('#container');
@@ -29,11 +28,8 @@ import myspaghetti from './spaghetti/spaghetti';
 		renderNavArea: function () {
 			MyNavMenuDisplay(app.parent);
 		},
-		// renderContent: function () {
-		// 	myContent(app.parent);
-		// },
-		renderSpaghetti: function () {
-			myspaghetti(app.parent);
+		renderuichanges: function () {
+			myuichanges(app.parent);
 		},
 	};
 	app.init();

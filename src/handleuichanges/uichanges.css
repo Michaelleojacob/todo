@@ -1,0 +1,42 @@
+.contentWrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	padding: 0px 80px 0px 80px;
+}
+
+.itemWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
+}
+
+.contenttitle {
+	font-size: 2rem;
+	padding-bottom: 10px;
+}
+
+.itemParent {
+	display: flex;
+	padding: 5px 0px 5px 0px;
+	font-size: 1.5rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.itemBtn {
+	display: flex;
+	color: green;
+	font-size: 1.5rem;
+	padding-right: 5px;
+}
+
+svg {
+	pointer-events: none;
+}

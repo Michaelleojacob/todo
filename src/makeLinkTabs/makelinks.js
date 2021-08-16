@@ -46,10 +46,17 @@ export default class MakeLinks {
 		this.projDiv.appendChild(this.projecttext);
 	}
 	static makeAddProjectBtn() {
+		this.buttonwrap = document.createElement('div');
+		this.buttonwrap.classList.add('buttonwrap');
 		this.addprojectbtn = document.createElement('button');
 		this.addprojectbtn.classList.add('addprojectbtn', 'nav');
-		this.addprojectbtn.textContent = '+';
-		this.projDiv.appendChild(this.addprojectbtn);
+		this.addprojectbtn.innerHTML = `<i class="fas fa-plus"></i>`;
+		this.buttontext = document.createElement('div');
+		this.buttontext.textContent = 'add project';
+		this.buttontext.classList.add('buttontext');
+		this.projDiv.appendChild(this.buttonwrap);
+		this.buttonwrap.appendChild(this.addprojectbtn);
+		this.addprojectbtn.appendChild(this.buttontext);
 	}
 
 	//! make plus button separate as to add text = 'add project'
