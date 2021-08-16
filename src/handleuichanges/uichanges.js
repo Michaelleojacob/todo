@@ -89,7 +89,7 @@ export default function myuichanges(parent) {
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
 				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
-				if (displayFrom === false) {
+				if (displayFrom === false && item.from !== 'all') {
 					this.itemName.innerHTML = `${item.name} (${item.from})`;
 				} else {
 					this.itemName.innerHTML = `${item.name}`;
