@@ -41,7 +41,7 @@
 	border: 1px solid #7272724f;
 	border-radius: 8px;
 }
-.navbtn:focus {
+.navbtn:active {
 	background: #7272727e;
 	border: 1px solid #7272727e;
 	border-radius: 8px;
@@ -61,7 +61,7 @@
 	border: 1px solid #7272724f;
 	border-radius: 8px;
 }
-.addprojectbtn:focus {
+.addprojectbtn:active {
 	background: #7272727e;
 	border: 1px solid #7272727e;
 	border-radius: 8px;

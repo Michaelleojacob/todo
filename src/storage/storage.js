@@ -1,4 +1,5 @@
 import Todo from '../newTodo/todo';
+import Projects from '../projectClass/projectClass';
 
 export default class Storage {
 	static getTodos() {
@@ -24,22 +25,51 @@ export default class Storage {
 		});
 		localStorage.setItem('todos', JSON.stringify(todos));
 	}
+	static getProjects() {
+		let projects;
+		if (localStorage.getItem('projects') === null) {
+			projects = [];
+		} else {
+			projects = JSON.parse(localStorage.getItem('projects'));
+		}
+		return projects;
+	}
+	static addProject(project) {
+		const projects = Storage.getProjects();
+		projects.push(project);
+		localStorage.setItem('projects', JSON.stringify(projects));
+	}
 }
 
-// const todo1 = new Todo('todo1', '1/1/2021', 'all');
-// const todo2 = new Todo('todo2', '2/2/2021', 'all');
-// const todo3 = new Todo('todo3', '3/3/2021', 'project1');
-// const todo4 = new Todo('todo4', '4/4/2021', 'project2');
-// const todo5 = new Todo('todo5', '5/5/2021', 'all');
-// const todo6 = new Todo('todo6', '5/5/2021', 'all');
-// const todo7 = new Todo('todo7', '5/5/2021', 'all');
-// const todo8 = new Todo('todo8', '5/5/2021', 'project three');
+function dummytodos() {
+	const todo1 = new Todo('todo1', '1/1/2021', 'all');
+	const todo2 = new Todo('todo2', '2/2/2021', 'all');
+	const todo3 = new Todo('todo3', '3/3/2021', 'project1');
+	const todo4 = new Todo('todo4', '4/4/2021', 'project2');
+	const todo5 = new Todo('todo5', '5/5/2021', 'all');
+	const todo6 = new Todo('todo6', '5/5/2021', 'all');
+	const todo7 = new Todo('todo7', '5/5/2021', 'all');
+	const todo8 = new Todo('todo8', '5/5/2021', 'project three');
 
-// Storage.addTodo(todo1);
-// Storage.addTodo(todo2);
-// Storage.addTodo(todo3);
-// Storage.addTodo(todo4);
-// Storage.addTodo(todo5);
-// Storage.addTodo(todo6);
-// Storage.addTodo(todo7);
-// Storage.addTodo(todo8);
+	Storage.addTodo(todo1);
+	Storage.addTodo(todo2);
+	Storage.addTodo(todo3);
+	Storage.addTodo(todo4);
+	Storage.addTodo(todo5);
+	Storage.addTodo(todo6);
+	Storage.addTodo(todo7);
+	Storage.addTodo(todo8);
+}
+function dummyProjects() {
+	const proj1 = new Projects('runescape');
+	const proj2 = new Projects('escape from tarkov');
+	Storage.addProject(proj1);
+	Storage.addProject(proj2);
+}
+
+if (localStorage.getItem('todos') === null) {
+	dummytodos();
+}
+if (localStorage.getItem('projects') === null) {
+	dummyProjects();
+}

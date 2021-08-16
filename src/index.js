@@ -11,7 +11,6 @@ import myuichanges from './handleuichanges/uichanges';
 			this.navEventListener();
 			this.renderHeader();
 			this.renderNavArea();
-			// this.renderContent();
 			this.renderuichanges();
 		},
 		cacheDom: function () {
