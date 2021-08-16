@@ -33,6 +33,7 @@ export default function myuichanges(parent) {
 					textcontent: text,
 					objProperty: 'getAllTodos',
 					filterBy: 'all',
+					displayFrom: false,
 				});
 			}
 			if (event.target.className.includes('todaybtn')) {
@@ -77,7 +78,7 @@ export default function myuichanges(parent) {
 			});
 			return this.filteredArr;
 		},
-		makeTodoItems(arr) {
+		makeTodoItems(arr, displayFrom) {
 			for (let item of arr) {
 				this.itemWrapper = document.createElement('div');
 				this.itemWrapper.classList.add('itemWrapper');
@@ -88,7 +89,11 @@ export default function myuichanges(parent) {
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
 				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
-				this.itemName.innerHTML = ` ${item.name}`;
+				if (displayFrom === false) {
+					this.itemName.innerHTML = `${item.name} (${item.from})`;
+				} else {
+					this.itemName.innerHTML = `${item.name}`;
+				}
 				this.itemDate = document.createElement('div');
 				this.itemDate.textContent = `${item.date}`;
 				this.contentWrapper.appendChild(this.itemWrapper);
@@ -103,10 +108,16 @@ export default function myuichanges(parent) {
 				document.querySelector('.allBtn').click();
 			});
 		},
-		makeCompletedUI({ divName, textcontent, objProperty, filterBy }) {
+		makeCompletedUI({
+			divName,
+			textcontent,
+			objProperty,
+			filterBy,
+			displayFrom,
+		}) {
 			this.makeContentTitle(divName, textcontent);
 			const myfilteredarr = this.getFilteredArray(objProperty, filterBy);
-			this.makeTodoItems(myfilteredarr);
+			this.makeTodoItems(myfilteredarr, displayFrom);
 		},
 	};
 	uichanges.init();
