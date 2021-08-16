@@ -33,6 +33,7 @@ export default class Storage {
 // const todo5 = new Todo('todo5', '5/5/2021', 'all');
 // const todo6 = new Todo('todo6', '5/5/2021', 'all');
 // const todo7 = new Todo('todo7', '5/5/2021', 'all');
+// const todo8 = new Todo('todo8', '5/5/2021', 'project three');
 
 // Storage.addTodo(todo1);
 // Storage.addTodo(todo2);
@@ -41,3 +42,4 @@ export default class Storage {
 // Storage.addTodo(todo5);
 // Storage.addTodo(todo6);
 // Storage.addTodo(todo7);
+// Storage.addTodo(todo8);

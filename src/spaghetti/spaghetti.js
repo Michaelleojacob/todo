@@ -14,7 +14,6 @@ export default function myspaghetti(parent) {
 			this.makeSphaghWrapper();
 			this.eventDeligation();
 			this.simulateClick();
-			// this.staticAll();
 		},
 		removeAllChildNodes(parent) {
 			while (parent.firstChild) {
@@ -28,40 +27,35 @@ export default function myspaghetti(parent) {
 			});
 			return this.contentWrapper;
 		},
-		//! this could all be made more dynamic !\\
-		// staticAll() {
-		// 	this.removeAllChildNodes(this.contentWrapper);
-		// 	this.allDiv = MakeDiv({
-		// 		elementName: 'allTitle',
-		// 		text: 'All',
-		// 		parentEl: this.contentWrapper,
-		// 	});
-		// 	this.allDiv.classList.add('contenttitle');
-		// 	const todos = Storage.getTodos();
-		// 	this.makeTodoItems(todos);
-		// },
-		// makeAll(){
-		// 	this.makeCompletedUI()
-		// },
 		handleClickLogic(event) {
 			console.log(event);
 			if (event.target.className.includes('allBtn')) {
 				const text = event.target.textContent.trim();
 				spaghetti.makeCompletedUI({
-					divName: text,
+					divName: text.toLowerCase(),
 					textcontent: text,
-					objProperty: 'from',
+					objProperty: 'getAllTodos',
 					filterBy: 'all',
 				});
 			}
 			if (event.target.className.includes('todaybtn')) {
-				console.log('today');
-				// this.renderToday();
+				const text = event.target.textContent.trim();
+				spaghetti.makeCompletedUI({
+					divName: text.toLowerCase(),
+					textcontent: text,
+					objProperty: 'date',
+					filterBy: '5/5/2021',
+				});
 			}
-
 			if (event.target.className.includes('weekbtn')) {
 				console.log('week');
-				// this.renderWeek();
+				const text = event.target.textContent.trim();
+				spaghetti.makeCompletedUI({
+					divName: text.toLowerCase(),
+					textcontent: text,
+					objProperty: 'date',
+					filterBy: '1/1/2021',
+				});
 			}
 		},
 		eventDeligation() {
@@ -85,6 +79,7 @@ export default function myspaghetti(parent) {
 					this.filteredArr.push(x);
 				}
 			});
+			console.log(this.filteredArr);
 			return this.filteredArr;
 		},
 		makeTodoItems(arr) {

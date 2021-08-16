@@ -4,6 +4,7 @@ export default class Todo {
 		this.date = date;
 		this.from = from;
 		this.id = Todo.giveUniqueId();
+		this.getAllTodos = 'all';
 	}
 	todoName(newName) {
 		this.name = newName;
