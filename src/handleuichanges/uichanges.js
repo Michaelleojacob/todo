@@ -33,7 +33,6 @@ export default function myuichanges(parent) {
 					textcontent: text,
 					objProperty: 'getAllTodos',
 					filterBy: 'all',
-					displayFrom: false,
 				});
 			}
 			if (event.target.className.includes('todaybtn')) {
@@ -78,7 +77,7 @@ export default function myuichanges(parent) {
 			});
 			return this.filteredArr;
 		},
-		makeTodoItems(arr, displayFrom) {
+		makeTodoItems(arr) {
 			for (let item of arr) {
 				this.itemWrapper = document.createElement('div');
 				this.itemWrapper.classList.add('itemWrapper');
@@ -89,7 +88,7 @@ export default function myuichanges(parent) {
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
 				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
-				if (displayFrom === false && item.from !== 'all') {
+				if (item.from !== 'all') {
 					this.itemName.innerHTML = `${item.name} (${item.from})`;
 				} else {
 					this.itemName.innerHTML = `${item.name}`;
