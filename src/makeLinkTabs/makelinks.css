@@ -36,10 +36,14 @@
 	box-sizing: border-box;
 	border: 1px solid #3d3d3d;
 }
-
 .navbtn:hover {
 	background: #7272724f;
 	border: 1px solid #7272724f;
+	border-radius: 8px;
+}
+.navbtn:focus {
+	background: #7272727e;
+	border: 1px solid #7272727e;
 	border-radius: 8px;
 }
 
@@ -55,6 +59,11 @@
 .addprojectbtn:hover {
 	background: #7272724f;
 	border: 1px solid #7272724f;
+	border-radius: 8px;
+}
+.addprojectbtn:focus {
+	background: #7272727e;
+	border: 1px solid #7272727e;
 	border-radius: 8px;
 }
 
