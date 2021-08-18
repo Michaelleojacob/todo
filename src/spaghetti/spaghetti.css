@@ -13,6 +13,10 @@
 
 .projicon {
 	margin-right: 5px;
+	pointer-events: none;
+}
+.projtext {
+	pointer-events: none;
 }
 
 .userproj {

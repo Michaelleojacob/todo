@@ -63,8 +63,10 @@ function dummytodos() {
 function dummyProjects() {
 	const proj1 = new Projects('runescape');
 	const proj2 = new Projects('escape from tarkov');
+	const proj3 = new Projects('project three');
 	Storage.addProject(proj1);
 	Storage.addProject(proj2);
+	Storage.addProject(proj3);
 }
 
 if (localStorage.getItem('todos') === null) {

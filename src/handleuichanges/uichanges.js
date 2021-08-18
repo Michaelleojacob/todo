@@ -53,6 +53,16 @@ export default function myuichanges(parent) {
 					filterBy: '1/1/2021',
 				});
 			}
+			if (event.target.className.includes('userproj')) {
+				const divName = event.target.classList[0];
+				const titleText = event.target.textContent.trim();
+				uichanges.makeCompletedUI({
+					divName: divName.toLowerCase(),
+					textcontent: titleText,
+					objProperty: 'from',
+					filterBy: titleText,
+				});
+			}
 		},
 		eventDeligation() {
 			document.addEventListener('click', this.handleClickLogic);
