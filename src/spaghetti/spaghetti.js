@@ -1,6 +1,10 @@
 import './spaghetti.css';
 import Storage from '../storage/storage';
 import MakeDiv from '../makeDiv/makeDiv';
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 export default class Spaghetti {
 	static init() {
@@ -21,15 +25,11 @@ export default class Spaghetti {
 	static appendProjects() {
 		this.allProjects = Storage.getProjects();
 		this.allProjects.forEach(project => {
-			console.log(project.name.trim().split(' ').join(''));
-			this.eachProj = document.createElement('button');
-			this.eachProj.classList.add(`${project.name.trim().split(' ').join('')}`);
-			this.eachProj.classList.add('userproj');
-			this.eachProj.textContent = project.name;
-			console.log(this.eachProj);
-			this.projwrap.appendChild(this.eachProj);
+			this.eachwrap = document.createElement('button');
+			this.eachwrap.classList.add(`${project.name.trim().split(' ').join('')}`);
+			this.eachwrap.classList.add('userproj');
+			this.eachwrap.innerHTML = `<i class="projicon far fa-folder"></i> <span class ="projtext">${project.name}<span/>`;
+			this.projwrap.appendChild(this.eachwrap);
 		});
-		console.log(this.allProjects);
-		// this.parent.appendChild(null);
 	}
 }

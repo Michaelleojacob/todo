@@ -11,13 +11,23 @@
 	flex-wrap: nowrap;
 }
 
+.projicon {
+	margin-right: 5px;
+}
+
 .userproj {
+	display: flex;
 	font-size: 2rem;
 	color: inherit;
 	padding: 6px;
 	box-sizing: border-box;
 	border: 1px solid #3d3d3d;
 	border-radius: 8px;
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: flex-start;
 }
 
 .userproj:hover {
