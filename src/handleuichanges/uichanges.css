@@ -47,6 +47,12 @@
 	max-width: 170px;
 	font-size: 1.4rem;
 }
+.todoItem:hover {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: max-content;
+}
 
 .contenttitle {
 	font-size: 2rem;
