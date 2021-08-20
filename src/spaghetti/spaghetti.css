@@ -20,9 +20,6 @@
 	border: 1px solid #3d3d3d;
 	border-radius: 8px;
 }
-.trashcan {
-	display: inline-flex;
-}
 .projicon {
 	display: inline-flex;
 	margin-right: 5px;
@@ -37,8 +34,11 @@
 	display: block;
 	margin-left: auto;
 	font-size: 2rem;
-	color: rgb(117, 21, 21);
+	color: #3d3d3d;
 	align-self: center;
+}
+.ppdiv:hover .projtrash {
+	color: #8d0801a1;
 }
 
 .userproj {
