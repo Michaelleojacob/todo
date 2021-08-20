@@ -34,6 +34,7 @@ export default function myuichanges(parent) {
 					objProperty: 'getAllTodos',
 					filterBy: 'all',
 				});
+				uichanges.makeAddNewButton();
 			}
 			if (event.target.className.includes('todaybtn')) {
 				const text = event.target.textContent.trim();
@@ -124,10 +125,11 @@ export default function myuichanges(parent) {
 				this.dateAndDel.appendChild(this.todoDelete);
 			}
 		},
-		simulateClick() {
-			document.addEventListener('DOMContentLoaded', e => {
-				document.querySelector('.allBtn').click();
-			});
+		makeAddNewButton() {
+			this.newBtnWrap = document.createElement('button');
+			this.newBtnWrap.classList.add('newBtnWrap');
+			this.newBtnWrap.innerHTML = `<i class="plusIcon fas fa-plus"></i> <span class="newTodotxt">new task</span>`;
+			this.contentWrapper.appendChild(this.newBtnWrap);
 		},
 		makeCompletedUI({
 			divName,
@@ -139,6 +141,11 @@ export default function myuichanges(parent) {
 			this.makeContentTitle(divName, textcontent);
 			const myfilteredarr = this.getFilteredArray(objProperty, filterBy);
 			this.makeTodoItems(myfilteredarr, displayFrom);
+		},
+		simulateClick() {
+			document.addEventListener('DOMContentLoaded', e => {
+				document.querySelector('.allBtn').click();
+			});
 		},
 	};
 	uichanges.init();
