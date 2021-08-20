@@ -3,7 +3,8 @@ import myNavEvent from './navEvent/navEvent';
 import myheader from './header/header';
 import MyNavMenuDisplay from './navMenuDisplay/navMenu';
 import myuichanges from './handleuichanges/uichanges';
-import Spaghetti from './spaghetti/spaghetti';
+// import Spaghetti from './spaghetti/spaghetti';
+import ProjectTodos from './projectTodos/projectTodos';
 
 (function () {
 	const app = {
@@ -13,7 +14,7 @@ import Spaghetti from './spaghetti/spaghetti';
 			this.renderHeader();
 			this.renderNavArea();
 			this.renderuichanges();
-			this.renderSpaghetti();
+			this.renderProjectTodos();
 		},
 		cacheDom: function () {
 			this.parent = document.querySelector('#container');
@@ -32,8 +33,8 @@ import Spaghetti from './spaghetti/spaghetti';
 		renderuichanges: function () {
 			myuichanges(app.parent);
 		},
-		renderSpaghetti() {
-			Spaghetti.init();
+		renderProjectTodos() {
+			ProjectTodos.init();
 		},
 	};
 	app.init();
