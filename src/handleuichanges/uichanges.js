@@ -93,8 +93,8 @@ export default function myuichanges(parent) {
 			for (let item of arr) {
 				this.itemWrapper = document.createElement('div');
 				this.itemWrapper.classList.add('itemWrapper');
-				this.itemParent = document.createElement('div');
-				this.itemParent.classList.add('itemParent');
+				this.checkPlusText = document.createElement('div');
+				this.checkPlusText.classList.add('checkPlusText');
 				this.itemBtn = document.createElement('button');
 				this.itemBtn.classList.add('itemBtn');
 				this.itemBtn.innerHTML = `<i class="far fa-check-circle"></i> `;
@@ -105,13 +105,23 @@ export default function myuichanges(parent) {
 				} else {
 					this.itemName.innerHTML = `${item.name}`;
 				}
+				this.dateAndDel = document.createElement('div');
+				this.dateAndDel.classList.add('dateAndDel');
 				this.itemDate = document.createElement('div');
+				this.itemDate.classList.add('itemDate');
 				this.itemDate.textContent = `${item.date}`;
+				this.todoDelete = document.createElement('button');
+				this.todoDelete.classList.add('todoDelete');
+				this.todoDelete.textContent = 'X';
+
 				this.contentWrapper.appendChild(this.itemWrapper);
-				this.itemWrapper.appendChild(this.itemParent);
-				this.itemParent.appendChild(this.itemName);
-				this.itemParent.appendChild(this.itemDate);
-				this.itemWrapper.prepend(this.itemBtn);
+				this.itemWrapper.appendChild(this.checkPlusText);
+				this.itemWrapper.appendChild(this.dateAndDel);
+
+				this.checkPlusText.appendChild(this.itemBtn);
+				this.checkPlusText.appendChild(this.itemName);
+				this.dateAndDel.appendChild(this.itemDate);
+				this.dateAndDel.appendChild(this.todoDelete);
 			}
 		},
 		simulateClick() {
