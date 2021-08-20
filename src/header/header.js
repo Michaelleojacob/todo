@@ -39,7 +39,7 @@ export default function myheader(parent) {
 			this.tiwrap.appendChild(this.hTitle);
 		},
 		burgerIcon: function () {
-			this.bicon = document.createElement('div');
+			this.bicon = document.createElement('button');
 			this.bicon.classList.add('bicon');
 			this.bicon.innerHTML = `<i class="fas svg fa-bars"></i>`;
 			this.hwrapper.appendChild(this.bicon);
