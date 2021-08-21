@@ -33,8 +33,8 @@ export default function myuichanges(parent) {
 					textcontent: text,
 					objProperty: 'getAllTodos',
 					filterBy: 'all',
+					addnewtask: false,
 				});
-				uichanges.makeAddNewButton();
 			}
 			if (event.target.className.includes('todaybtn')) {
 				const text = event.target.textContent.trim();
@@ -64,6 +64,7 @@ export default function myuichanges(parent) {
 					textcontent: titleText,
 					objProperty: 'from',
 					filterBy: titleText,
+					addnewtask: false,
 				});
 			}
 		},
@@ -137,10 +138,14 @@ export default function myuichanges(parent) {
 			objProperty,
 			filterBy,
 			displayFrom,
+			addnewtask,
 		}) {
 			this.makeContentTitle(divName, textcontent);
 			const myfilteredarr = this.getFilteredArray(objProperty, filterBy);
 			this.makeTodoItems(myfilteredarr, displayFrom);
+			if (addnewtask === false) {
+				this.makeAddNewButton();
+			}
 		},
 		simulateClick() {
 			document.addEventListener('DOMContentLoaded', e => {

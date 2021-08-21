@@ -10,7 +10,6 @@ export default function myNavEvent() {
 		},
 
 		targetWasNavBurger: function (event) {
-			console.log(navEvent.elementToChange.className);
 			navEvent.elementToChange.classList.toggle('active');
 		},
 		addListenerToNav: function () {
