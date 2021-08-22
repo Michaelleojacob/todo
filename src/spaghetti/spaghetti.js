@@ -1,18 +1,22 @@
-export default function myNewTaskClick() {
-	const newTaskClick = {
+export default function ListenForNewBtnClick() {
+	const newBtnClick = {
 		init() {
-			// this.cacheDom();
+			console.log('hello');
+			this.cacheDom();
 			// this.listenForNewTask();
 		},
 		cacheDom() {
-			this.parent = document.querySelector('.newBtnWrap');
-			return this.parent;
+			this.newTask = document.querySelector('#newTask');
+			this.newProjTask = document.querySelector('#newProjTask');
+			this.newProject = document.querySelector('#newProject');
+			console.log(this.newTask, this.newProjTask, this.newProject);
+			// return this.parent;
 		},
 		listenForNewTask() {
 			console.log(this.parent);
 		},
 	};
 	document.addEventListener('DOMContentLoaded', () => {
-		newTaskClick.init();
+		newBtnClick.init();
 	});
 }
