@@ -1,6 +1,7 @@
 import './uichanges.css';
 import MakeDiv from '../makeDiv/makeDiv';
 import Storage from '../storage/storage';
+import myRenderNewButton from '../fortesting/testing';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -33,7 +34,11 @@ export default function myuichanges(parent) {
 					textcontent: text,
 					objProperty: 'getAllTodos',
 					filterBy: 'all',
-					addnewtask: false,
+					displayFrom: false,
+					btnName: 'myNewTask',
+					id: 'newTask',
+					text: 'new task',
+					parent: uichanges.contentWrapper,
 				});
 			}
 			if (event.target.className.includes('todaybtn')) {
@@ -64,7 +69,10 @@ export default function myuichanges(parent) {
 					textcontent: titleText,
 					objProperty: 'from',
 					filterBy: titleText,
-					addnewtask: false,
+					displayFrom: false,
+					id: 'newProjTask',
+					text: 'new task',
+					parent: uichanges.contentWrapper,
 				});
 			}
 		},
@@ -126,9 +134,10 @@ export default function myuichanges(parent) {
 				this.dateAndDel.appendChild(this.todoDelete);
 			}
 		},
-		makeAddNewButton() {
+		makeAddNewButton(id) {
 			this.newBtnWrap = document.createElement('button');
 			this.newBtnWrap.classList.add('newBtnWrap');
+			this.newBtnWrap.setAttribute('id', id);
 			this.newBtnWrap.innerHTML = `<i class="plusIcon fas fa-plus"></i> <span class="newTodotxt">new task</span>`;
 			this.contentWrapper.appendChild(this.newBtnWrap);
 		},
@@ -138,13 +147,16 @@ export default function myuichanges(parent) {
 			objProperty,
 			filterBy,
 			displayFrom,
-			addnewtask,
+			btnName,
+			id,
+			text,
+			parent,
 		}) {
 			this.makeContentTitle(divName, textcontent);
 			const myfilteredarr = this.getFilteredArray(objProperty, filterBy);
 			this.makeTodoItems(myfilteredarr, displayFrom);
-			if (addnewtask === false) {
-				this.makeAddNewButton();
+			if (displayFrom === false) {
+				myRenderNewButton({ btnName, id, text, parent });
 			}
 		},
 		simulateClick() {

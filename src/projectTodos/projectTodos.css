@@ -42,11 +42,16 @@
 }
 
 .userproj {
-	display: flex;
+	white-space: pre;
+	display: inline-flex;
 	font-size: 2rem;
 	color: inherit;
 	padding: 6px;
 	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
 }
 
 .ppdiv:hover {
