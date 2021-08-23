@@ -5,7 +5,6 @@ import MyNavMenuDisplay from './navMenuDisplay/navMenu';
 import myuichanges from './handleuichanges/uichanges';
 import ProjectTodos from './projectTodos/projectTodos';
 import myNewTaskClick from './spaghetti/spaghetti';
-import ListenForNewBtnClick from './spaghetti/spaghetti';
 
 (function () {
 	const app = {
@@ -17,6 +16,7 @@ import ListenForNewBtnClick from './spaghetti/spaghetti';
 			this.renderuichanges();
 			this.renderProjectTodos();
 			this.listenForMyNewTaskClick();
+			this.testing();
 		},
 		cacheDom: function () {
 			this.parent = document.querySelector('#container');
@@ -41,17 +41,33 @@ import ListenForNewBtnClick from './spaghetti/spaghetti';
 		listenForMyNewTaskClick() {
 			myNewTaskClick();
 		},
-		listenForCreateNewItemClick() {
-			const elementToObserve = document.querySelector('.contentWrapper');
-			// create a new instance of `MutationObserver` named `observer`,
-			// passing it a callback function
-			const observer = new MutationObserver(function () {
-				console.log('callback that runs when observer is triggered');
-			});
+		testing() {
+			// Select the node that will be observed for mutations
+			const targetNode = document.getElementById('myContentWrapper');
 
-			// call `observe()` on that MutationObserver instance,
-			// passing it the element to observe, and the options object
-			observer.observe(elementToObserve, { subtree: true, childList: true });
+			// Options for the observer (which mutations to observe)
+			const config = { attributes: true, childList: true, subtree: true };
+
+			// Callback function to execute when mutations are observed
+			const callback = function (mutationsList, observer) {
+				// Use traditional 'for loops' for IE 11
+				for (const mutation of mutationsList) {
+					if (mutation.type === 'attributes') {
+						console.log(
+							'The ' + mutation.attributeName + ' attribute was modified.'
+						);
+					}
+				}
+			};
+
+			// Create an observer instance linked to the callback function
+			const observer = new MutationObserver(callback);
+
+			// Start observing the target node for configured mutations
+			observer.observe(targetNode, config);
+
+			// // Later, you can stop observing
+			// observer.disconnect();
 		},
 	};
 	app.init();

@@ -24,6 +24,7 @@ export default function myuichanges(parent) {
 				elementName: 'contentWrapper',
 				parentEl: parent,
 			});
+			this.contentWrapper.setAttribute('id', 'myContentWrapper');
 			return this.contentWrapper;
 		},
 		handleClickLogic(event) {
