@@ -12,10 +12,6 @@ export default function myMutationObserver() {
 		// Use traditional 'for loops' for IE 11
 		for (const mutation of mutationsList) {
 			if (mutation.type === 'attributes') {
-				// console.log(
-				// 	'The ' + mutation.attributeName + ' attribute was modified.'
-				// );
-				// myListenForNewBtnClick();
 			}
 		}
 	};

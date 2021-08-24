@@ -10,6 +10,7 @@
 	align-content: center;
 	justify-content: center;
 	flex-wrap: nowrap;
+	width: 100%;
 }
 .newBtnWrap:hover {
 	background: #7272724f;
@@ -32,4 +33,5 @@
 	flex-direction: column;
 	align-items: center;
 	flex-wrap: nowrap;
+	width: 100%;
 }

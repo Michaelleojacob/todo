@@ -52,7 +52,6 @@ export default class MakeLinks {
 			text: 'new project',
 			parent: MakeLinks.projDiv,
 		});
-		this.newProjBtn.style.width = `100%`;
 	}
 
 	//! make plus button separate as to add text = 'add project'
