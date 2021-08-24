@@ -36,14 +36,6 @@
 	width: 100%;
 }
 
-.formwrap {
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-}
-
 .inputWrap {
 	display: flex;
 	justify-content: center;
@@ -123,6 +115,13 @@
 	opacity: 1;
 }
 
+.formwrap {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
 .formInactive {
 	display: none;
 }

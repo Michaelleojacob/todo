@@ -14,10 +14,10 @@ export default function myRenderNewButton({ id, text, parent }) {
 			this.newItemBtn.innerHTML = `<i class="plusIcon fas fa-plus"></i> <span class="new${text}">${text}</span>`;
 			parent.appendChild(this.parentNewButtonWrap);
 			this.parentNewButtonWrap.appendChild(this.newItemBtn);
-			this.makeNewItemDisplay(id);
+			this.makeNewItemDisplay(id, text);
 			return this.newItemBtn;
 		},
-		makeNewItemDisplay(id) {
+		makeNewItemDisplay(id, text) {
 			this.formwrap = document.createElement('div');
 			this.formwrap.classList.add('formwrap', 'formInactive');
 			this.formwrap.setAttribute('id', `${id}Wrap`);
@@ -30,7 +30,7 @@ export default function myRenderNewButton({ id, text, parent }) {
 
 			this.inputArea = document.createElement('input');
 			this.inputArea.classList.add('inputArea');
-			this.inputArea.placeholder = `enter a new task here`;
+			this.inputArea.placeholder = `enter a ${text} here`;
 			this.inputArea.setAttribute('id', `${id}InputArea`);
 
 			this.submitAndCancelWrap = document.createElement('div');

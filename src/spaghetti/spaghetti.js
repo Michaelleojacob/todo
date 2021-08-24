@@ -2,20 +2,22 @@ import './spaghetti.css';
 
 export default function myListenForNewBtnClick() {
 	const newBtnClick = {
-		init() {
-			// const myElement = document.getElementById('newTask');
-			// myElement.addEventListener('click', e => {
-			// 	e.target.parentNode.childNodes[1].classList.toggle('formInactive');
-			// });
-		},
-		initTwo() {
+		giveEachNewItemAnEvent() {
 			document.addEventListener('click', e => {
-				console.log(e.target);
 				if (e.target.classList.contains('newBtnWrap')) {
+					newBtnClick.closeAnyActiveForms();
 					e.target.parentNode.childNodes[1].classList.toggle('formInactive');
 				}
 			});
 		},
+		closeAnyActiveForms() {
+			const myNodeList = document.querySelectorAll('.formwrap');
+			for (let item of myNodeList) {
+				item.classList.add('formInactive');
+			}
+		},
 	};
-	document.addEventListener('DOMContentLoaded', () => newBtnClick.initTwo());
+	document.addEventListener('DOMContentLoaded', () =>
+		newBtnClick.giveEachNewItemAnEvent()
+	);
 }
