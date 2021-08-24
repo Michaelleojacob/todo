@@ -46,10 +46,11 @@ export default function myRenderNewButton({ id, text, parent }) {
 			this.cancelBtn.setAttribute('id', `${id}Cancel`);
 
 			this.inputWrap.appendChild(this.inputArea);
+			this.formwrap.appendChild(this.form);
 			this.submitAndCancelWrap.appendChild(this.submitBtn);
 			this.submitAndCancelWrap.appendChild(this.cancelBtn);
-			this.formwrap.appendChild(this.inputWrap);
-			this.formwrap.appendChild(this.submitAndCancelWrap);
+			this.form.appendChild(this.inputWrap);
+			this.form.appendChild(this.submitAndCancelWrap);
 			this.parentNewButtonWrap.appendChild(this.formwrap);
 		},
 	};
