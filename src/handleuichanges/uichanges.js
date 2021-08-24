@@ -61,8 +61,6 @@ export default function myuichanges(parent) {
 				});
 			}
 			if (event.target.className.includes('userproj')) {
-				event.stopPropagation();
-				event.preventDefault();
 				const divName = event.target.classList[0];
 				const titleText = event.target.textContent.trim();
 				uichanges.makeCompletedUI({

@@ -4,7 +4,7 @@ import myheader from './header/header';
 import MyNavMenuDisplay from './navMenuDisplay/navMenu';
 import myuichanges from './handleuichanges/uichanges';
 import ProjectTodos from './projectTodos/projectTodos';
-import myMutationObserver from './MutationObserver/Mutation';
+import myListenForNewBtnClick from './spaghetti/spaghetti';
 
 (function () {
 	const app = {
@@ -38,7 +38,7 @@ import myMutationObserver from './MutationObserver/Mutation';
 			ProjectTodos.init();
 		},
 		testing() {
-			myMutationObserver();
+			myListenForNewBtnClick();
 		},
 	};
 	app.init();

@@ -106,5 +106,9 @@ svg {
 }
 
 .plusIcon {
+	pointer-events: none;
 	margin-right: 10px;
+}
+.newnew {
+	pointer-events: none;
 }

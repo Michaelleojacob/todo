@@ -1,17 +1,29 @@
+import './spaghetti.css';
+
 export default function myListenForNewBtnClick() {
 	const newBtnClick = {
 		init() {
-			this.cacheDom();
-			// this.listenForNewTask();
+			this.listenForEvent();
 		},
 		cacheDom() {
 			this.newTask = document.querySelector('#newTask');
 			this.newProjTask = document.querySelector('#newProjTask');
 			this.newProject = document.querySelector('#newProject');
-			console.log(this.newTask, this.newProjTask, this.newProject);
-			// return this.parent;
 		},
-		listenForNewTask() {},
+		listenForEvent() {
+			document.addEventListener('click', this.handleEventDeligation);
+		},
+		handleEventDeligation(event) {
+			if (event.target === document.querySelector('#newTask')) {
+				console.log('hi');
+			}
+			if (event.target === document.querySelector('#newProjTask')) {
+				console.log('hey');
+			}
+			if (event.target === document.querySelector('#newProject')) {
+				console.log('hello there');
+			}
+		},
 	};
 	newBtnClick.init();
 }
