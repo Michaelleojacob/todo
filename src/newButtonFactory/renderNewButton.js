@@ -19,7 +19,8 @@ export default function myRenderNewButton({ id, text, parent }) {
 		},
 		makeNewItemDisplay(id) {
 			this.formwrap = document.createElement('div');
-			this.formwrap.classList.add('formwrap');
+			this.formwrap.classList.add('formwrap', 'formInactive');
+			this.formwrap.setAttribute('id', `${id}Wrap`);
 
 			this.form = document.createElement('form');
 			this.form.setAttribute('id', `${id}Form`);
