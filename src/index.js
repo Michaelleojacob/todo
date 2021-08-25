@@ -4,7 +4,8 @@ import myheader from './header/header';
 import MyNavMenuDisplay from './navMenuDisplay/navMenu';
 import myuichanges from './handleuichanges/uichanges';
 import ProjectTodos from './projectTodos/projectTodos';
-import myListenForNewBtnClick from './spaghetti/spaghetti';
+import myListenForNewBtnClick from './addNewItemDisplay/addNewItemDisplay';
+import myListenForSubmit from './spaghetti/spaghetti';
 
 (function () {
 	const app = {
@@ -15,7 +16,8 @@ import myListenForNewBtnClick from './spaghetti/spaghetti';
 			this.renderNavArea();
 			this.renderuichanges();
 			this.renderProjectTodos();
-			this.testing();
+			this.newItemEvent();
+			this.submitNewItemEvent();
 		},
 		cacheDom: function () {
 			this.parent = document.querySelector('#container');
@@ -37,8 +39,11 @@ import myListenForNewBtnClick from './spaghetti/spaghetti';
 		renderProjectTodos() {
 			ProjectTodos.init();
 		},
-		testing() {
+		newItemEvent() {
 			myListenForNewBtnClick();
+		},
+		submitNewItemEvent() {
+			myListenForSubmit();
 		},
 	};
 	app.init();

@@ -32,6 +32,7 @@ export default function myRenderNewButton({ id, text, parent }) {
 			this.inputArea.classList.add('inputArea');
 			this.inputArea.placeholder = `enter a ${text} here`;
 			this.inputArea.setAttribute('id', `${id}InputArea`);
+			this.inputArea.setAttribute('autocomplete', `off`);
 
 			this.submitAndCancelWrap = document.createElement('div');
 			this.submitAndCancelWrap.classList.add('submitAndCancelWrap');
