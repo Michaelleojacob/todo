@@ -45,8 +45,9 @@
 .inputArea {
 	display: flex;
 	height: 50px;
-	background: inherit;
-	border: 1px solid #3d3d3d;
+	background: #353535;
+	border: 1px solid #222222;
+	border-radius: 8px;
 	color: white;
 	text-align: center;
 	font-size: 1.4rem;
