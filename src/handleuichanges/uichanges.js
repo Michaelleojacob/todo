@@ -110,9 +110,9 @@ export default function myuichanges(parent) {
 				this.itemName = document.createElement('div');
 				this.itemName.classList.add('todoItem');
 				if (item.from !== 'all') {
-					this.itemName.innerHTML = `${item.name} (${item.from})`;
+					this.itemName.innerHTML = `<div class="eachItemName">${item.name}</div> <div class="eachItemDate">(${item.from})</div>`;
 				} else {
-					this.itemName.innerHTML = `${item.name}`;
+					this.itemName.innerHTML = `<div class="eachItemName">${item.name}</div>`;
 				}
 				this.dateAndDel = document.createElement('div');
 				this.dateAndDel.classList.add('dateAndDel');
