@@ -1,0 +1,65 @@
+.projecttext {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.projwrap {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.ppdiv {
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #3d3d3d;
+	border-radius: 8px;
+}
+.projicon {
+	display: inline-flex;
+	margin-right: 5px;
+	pointer-events: none;
+}
+.projtext {
+	display: inline-flex;
+	pointer-events: none;
+}
+
+.projtrash {
+	display: block;
+	margin-left: auto;
+	font-size: 2rem;
+	color: #3d3d3d;
+	align-self: center;
+}
+.ppdiv:hover .projtrash {
+	color: #8d0801a1;
+}
+
+.userproj {
+	white-space: pre;
+	display: inline-flex;
+	font-size: 2rem;
+	color: inherit;
+	padding: 6px;
+	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
+}
+
+.ppdiv:hover {
+	background: #7272724f;
+	border: 1px solid #7272724f;
+}
+.ppdiv:active {
+	background: #7272727e;
+	border: 1px solid #7272727e;
+	border-radius: 8px;
+}

@@ -34,7 +34,7 @@ import myListenForSubmit from './spaghetti/spaghetti';
 			MyNavMenuDisplay(app.parent);
 		},
 		renderuichanges: function () {
-			myuichanges(app.parent);
+			myuichanges.init(app.parent);
 		},
 		renderProjectTodos() {
 			ProjectTodos.init();
