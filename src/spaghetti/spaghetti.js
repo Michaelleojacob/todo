@@ -1,6 +1,7 @@
 import Todo from '../newTodo/todo';
 import Projects from '../projectClass/projectClass';
 import Storage from '../storage/storage';
+import myuichanges from '../handleuichanges/uichanges';
 
 export default function myListenForSubmit() {
 	const listenForSubmit = {
@@ -25,6 +26,13 @@ export default function myListenForSubmit() {
 					e.target.parentNode.classList.toggle('formInactive');
 
 					console.log(task);
+
+					(function makeui() {
+						const myparent = document.querySelector('.contentWrapper');
+						const myNewUiElement = document.createElement('div');
+						myNewUiElement.innerHTML = `${task.name} ${task.from} ${task.date}`;
+						myparent.appendChild(myNewUiElement);
+					})();
 				}
 
 				//? new project?\\
