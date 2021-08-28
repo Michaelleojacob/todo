@@ -9,7 +9,7 @@ export default function myNavEvent() {
 			this.elementToChange = document.querySelector('#navmenuarea');
 		},
 
-		targetWasNavBurger: function (event) {
+		targetWasNavBurger: function () {
 			navEvent.elementToChange.classList.toggle('active');
 		},
 		addListenerToNav: function () {

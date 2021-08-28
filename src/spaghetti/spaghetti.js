@@ -21,7 +21,11 @@ export default function myListenForSubmit() {
 					console.log(newProject);
 				}
 				if (e.target.id === 'newProjTaskForm') {
-					console.log(`projTask ${value}`);
+					let lolmyThing =
+						e.target.parentNode.parentNode.parentNode.childNodes[0]
+							.classList[0];
+					const newProjTask = new Todo(value, null, lolmyThing);
+					console.log(newProjTask);
 				}
 			});
 		},
